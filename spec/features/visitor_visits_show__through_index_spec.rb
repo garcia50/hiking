@@ -16,7 +16,6 @@ describe "As a visitor" do
       expect(page).to have_content("Bday")
       expect(page).to have_content("Spring Break")
       expect(page).to have_content("Winter")
-save_and_open_page
     
       click_on "Spring Break"
 
