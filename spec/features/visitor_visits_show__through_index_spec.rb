@@ -36,12 +36,18 @@ describe "As a visitor" do
     end
 
     it "Displays total hiking distance" do
-      visit trip_path(@trip_2)
+      @trail = Trail.create(name: "OBT", length: 10, address: "123 Orange Blossom Trail Rd" )
+      @trip_1 = @trail.trips.create!(name: "My Hike", start_date: "02/22/2017", end_date: "02/22/2017")
+      @trip_2 = @trail.trips.create!(name: "Ilana's Hike", start_date: "02/22/2017", end_date: "02/22/2017")
+      @trip_3 = @trail.trips.create!(name: "Ali's Hike", start_date: "02/22/2017", end_date: "02/22/2017")
 
-      expect(page).to have_content("Spring Break")     
-      expect(page).to have_content("Total Hiking Distance: 45")     
-      expect(page).to have_content(45)     
+      visit trail_path(@trail)
+
+      expect(page).to have_content("OBT")     
+      expect(page).to have_content("123 Orange Blossom Trail Rd")     
+      expect(page).to have_content(10)     
+      expect(page).to have_content(3)     
     end
-    
+
   end
 end
