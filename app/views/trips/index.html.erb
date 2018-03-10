@@ -1,5 +1,7 @@
 <h1>Here are your Trips</h1>
 
-<% @trips.all do |trip| %>
-  <%= trip.name %>
+<% @trips.each do |trip| %>
+  <ul>
+    <%= link_to trip.name, trip_path(trip) %>
+  </ul>  
 <% end %>
