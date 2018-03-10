@@ -1,7 +1,7 @@
 class TrailsController < ApplicationController
 
   def show
-    @trial = Trail.find(params[:id])
+    @trail = Trail.find(params[:id])
   end
 
 end
