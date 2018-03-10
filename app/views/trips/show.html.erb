@@ -1,1 +1,11 @@
-<h1>This is your <%= @trip.name %> trip!</h1>
+<h1>This is your info for <%= @trip.name %> trip!</h1>
+
+<% @trip.trails.each do |trail| %>
+  <h4><%= trail.name %></h4>
+  <ul>
+    <li><%= trail.length %></li>
+    <li><%= trail.address %></li>
+  </ul>
+<% end %>
+
+<h3>Total Hiking Distance: <%= @trip.total_hiking_distance %></h3>
