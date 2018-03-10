@@ -35,7 +35,13 @@ describe "As a visitor" do
       expect(page).to have_content(45)     
     end
 
+    it "Displays total hiking distance" do
+      visit trip_path(@trip_2)
 
-
+      expect(page).to have_content("Spring Break")     
+      expect(page).to have_content("Total Hiking Distance: 45")     
+      expect(page).to have_content(45)     
+    end
+    
   end
 end
